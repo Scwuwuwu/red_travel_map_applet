@@ -1,0 +1,25 @@
+<!-- detail.wxml -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar bg-red">
+    <view class="back-btn" bindtap="goBack">
+      <view class="back-arrow"></view>
+    </view>
+    <view class="title">红色旅游地图</view>
+    <view class="right-icons">
+      <view class="menu-dots"></view>
+      <view class="circle-btn"></view>
+    </view>
+  </view>
+  
+  <!-- 景点图片 -->
+  <image class="spot-image" src="{{area.image}}" mode="aspectFill"></image>
+  
+  <!-- 景点名称 -->
+  <view class="spot-title">{{area.name}}</view>
+  
+  <!-- 景点介绍 -->
+  <scroll-view scroll-y class="spot-intro">
+    <text space="emsp" user-select>{{area.intro}}</text>
+  </scroll-view>
+</view>

@@ -1,0 +1,116 @@
+/* 详情页样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+}
+
+/* 顶部导航栏 */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  z-index: 100;
+}
+
+.back-btn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-arrow {
+  width: 20rpx;
+  height: 20rpx;
+  border-left: 4rpx solid #fff;
+  border-bottom: 4rpx solid #fff;
+  transform: rotate(45deg);
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.right-icons {
+  display: flex;
+  align-items: center;
+}
+
+.menu-dots {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.menu-dots::before,
+.menu-dots::after {
+  content: "";
+  position: absolute;
+  width: 6rpx;
+  height: 6rpx;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-dots::before {
+  left: 10rpx;
+}
+
+.menu-dots::after {
+  right: 10rpx;
+}
+
+.menu-dots::after {
+  box-shadow: 0 0 0 4rpx #fff;
+}
+
+.circle-btn {
+  width: 50rpx;
+  height: 50rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+}
+
+/* 景点图片 */
+.spot-image {
+  width: 100%;
+  height: 420rpx;
+  margin-top: 90rpx;
+}
+
+/* 景点名称 */
+.spot-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  padding: 30rpx;
+  color: #333;
+  border-bottom: 1rpx solid #eee;
+}
+
+/* 景点介绍 */
+.spot-intro {
+  flex: 1;
+  padding: 30rpx;
+  font-size: 28rpx;
+  line-height: 1.8;
+  color: #666;
+}
+
+/* 红色背景 */
+.bg-red {
+  background-color: #940700;
+}

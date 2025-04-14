@@ -1,0 +1,67 @@
+<!-- index.wxml -->
+<view class="container flexV">
+  <!-- 顶部城市选择 - 修改为水平滚动的红色背景栏 -->
+  <view class="top-bar bg-red">
+    <scroll-view class="cityBar" scroll-x enable-flex>
+      <view 
+        wx:for="{{cityList}}" 
+        wx:key="cityId"
+        class="cityItem {{currentCityId == item.cityId ? 'active' : ''}}"
+        bindtap="handleCityChange"
+        data-cityid="{{item.cityId}}"
+      >
+        {{item.cityName}}
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 地图区域 -->
+  <map 
+    id="redMap"
+    class="map-area"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    markers="{{markers}}"
+    show-location
+  ></map>
+
+  <!-- 底部景点列表 - 修改为简洁的列表 -->
+  <view class="attraction-container">
+    <view class="toggle-bar" bindtap="toggleAreaBox">
+      共有{{areaList.length}}个 <text class="red-text">▼</text>
+    </view>
+    
+    <scroll-view 
+      scroll-y 
+      class="attraction-scroll"
+      hidden="{{isHide}}"
+    >
+      
+      <view 
+        wx:for="{{areaList}}" 
+        wx:key="areaId"
+        class="attraction-item"
+        bindtap="goToDetail"
+        data-cityid="{{currentCityId}}"
+        data-areaid="{{item.areaId}}"
+      >
+        <image 
+          src="{{item.image}}" 
+          class="attraction-image"
+          mode="aspectFill"
+        ></image>
+        <view class="attraction-info">
+          <text class="attraction-name">{{item.name}}</text>
+          <view class="action-buttons">
+            <view class="location-btn" catchtap="showCenter" data-lat="{{item.latitude}}" data-lon="{{item.longitude}}">
+              <image src="/images/location.png" class="action-icon"></image>
+            </view>
+            <view class="guide-btn" catchtap="guideMap" data-lat="{{item.latitude}}" data-lon="{{item.longitude}}" data-name="{{item.name}}">
+              <image src="/images/guide.png" class="action-icon"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
